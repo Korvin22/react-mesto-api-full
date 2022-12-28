@@ -1,0 +1,13 @@
+.popup__button-delete {
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 2px;
+  outline: none;
+  font-family: 'Inter', 'Arial', sans-serif;
+  padding:14px 164px 18px 164px;
+  margin:0;
+  border:none;
+}

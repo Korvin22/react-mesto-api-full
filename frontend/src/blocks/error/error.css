@@ -1,0 +1,20 @@
+.error {
+  color: red;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  display:block;
+  min-height:30px;
+}
+
+.error:first-of-type{
+  margin-bottom:5px;
+}
+
+.error:last-of-type{
+  margin-bottom:15px;
+}
+

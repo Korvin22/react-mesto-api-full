@@ -1,0 +1,9 @@
+.page_preload {
+  transition: none !important;
+
+  -moz-transition: none !important;
+
+  -ms-transition: none !important;
+
+  -o-transition: none !important;
+}

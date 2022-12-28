@@ -1,0 +1,30 @@
+.profile__open-popup {
+  background-image: url(../../../images/openpopup3.svg);
+  height:24px;
+  width:24px;
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-self:center;
+  margin-left:18px;
+  border: white solid 1px;
+  outline:none;
+  flex:none;
+
+}
+
+.profile__open-popup:hover {
+  opacity:0.6;
+  cursor:pointer;
+}
+
+
+@media screen and (max-width:528px) {
+  .profile__open-popup {
+    height:18px;
+    width:18px;
+    margin-left:10px;
+    margin-bottom:10px;
+
+  }
+}

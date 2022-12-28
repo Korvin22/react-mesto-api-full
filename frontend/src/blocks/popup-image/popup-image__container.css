@@ -1,0 +1,8 @@
+.popup-image__container {
+  position:relative;
+
+}
+
+.popup-image__container:before {
+  opacity:0.9;
+}
