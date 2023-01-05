@@ -6,6 +6,13 @@ const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
 const routerUsers = require('./routes/users');
 const routerCards = require('./routes/cards');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+// app.js
+
+// eslint-disable-next-line import/no-unresolved
+require('dotenv').config();
+
+console.log(process.env.NODE_ENV); // production
 const {
   NotFoundError,
 } = require('./constants/errors');
@@ -20,9 +27,16 @@ const app = express();
 
 /* app.use(express.static(path.join(__dirnamey, 'public'))); */
 app.use(bodyParser.json());
-
+app.use(requestLogger);
 app.use('/users', checkAuth, routerUsers);
 app.use('/cards', checkAuth, routerCards);
+
+/* краш тест сервера */
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
@@ -41,6 +55,8 @@ app.post('/signup', celebrate({
     password: Joi.string().required(),
   }),
 }), createUser);
+
+app.use(errorLogger);
 app.use((err, req, res, next) => {
   // если у ошибки нет статуса, выставляем 500
   const { statusCode = 500, message } = err;
