@@ -7,7 +7,7 @@ Backend  http://mestogud.nomoredomains.club
 
 ## Описание фронтэнд части
 
-##Использованные технологии:
+## Использованные технологии:
 
 * Вёрстка по макету Figma
 * Grid Layout
